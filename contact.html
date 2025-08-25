@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Nafiz Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Crimson+Text:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="terminal">
+
         <div class="terminal-header">
+
             <div class="terminal-buttons">
+                
                 <span class="btn close"></span>
                 <span class="btn minimize"></span>
                 <span class="btn maximize"></span>
@@ -35,65 +39,173 @@
                 </div>
                 
                 <div class="file-content">
+                    <!-- Modern Contact Form -->
+                    <div class="section">
+                        <h2># SEND_MESSAGE</h2>
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="form-group">
+                                <label for="name" class="form-label">NAME:</label>
+                                <input type="text" id="name" name="name" class="form-input" required 
+                                       placeholder="Enter your name" autocomplete="name">
+                                <span class="form-error" id="nameError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">EMAIL:</label>
+                                <input type="email" id="email" name="email" class="form-input" required 
+                                       placeholder="your.email@example.com" autocomplete="email">
+                                <span class="form-error" id="emailError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">SUBJECT:</label>
+                                <select id="subject" name="subject" class="form-select" required>
+                                    <option value="">Select a topic</option>
+                                    <option value="collaboration">🤝 Collaboration</option>
+                                    <option value="job">💼 Job Opportunity</option>
+                                    <option value="project">🚀 Project Discussion</option>
+                                    <option value="mentorship">📚 Mentorship</option>
+                                    <option value="other">💭 Other</option>
+                                </select>
+                                <span class="form-error" id="subjectError"></span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">MESSAGE:</label>
+                                <textarea id="message" name="message" class="form-textarea" required 
+                                         placeholder="Type your message here..." rows="5"></textarea>
+                                <span class="form-error" id="messageError"></span>
+                                <div class="char-counter">
+                                    <span id="charCount">0</span>/500 characters
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="form-submit" id="submitBtn">
+                                <span class="btn-text">SEND MESSAGE</span>
+                                <span class="btn-loader" style="display: none;">⟳ SENDING...</span>
+                            </button>
+                        </form>
+                        
+                        <div class="form-success" id="successMessage" style="display: none;">
+                            ✅ Message sent successfully! I'll get back to you soon.
+                        </div>
+                    </div>
+
                     <div class="section">
                         <h2># CONTACT_INFO</h2>
-                        <div class="contact-item">
-                            <div class="contact-method">📱 TELEGRAM:</div>
-                            <a href="https://t.me/bynafizz" target="_blank" class="contact-link">
-                                @bynafizz → t.me/bynafizz
-                            </a>
-                        </div>
+                        <div class="contact-grid">
+                            <div class="contact-item" data-contact="telegram">
+                                <div class="contact-icon">📱</div>
+                                <div class="contact-details">
+                                    <div class="contact-method">TELEGRAM</div>
+                                    <a href="https://t.me/bynafizz" target="_blank" class="contact-link" 
+                                       rel="noopener noreferrer" aria-label="Contact via Telegram">
+                                        @bynafizz
+                                    </a>
+                                </div>
+                            </div>
 
-                        <div class="contact-item">
-                            <div class="contact-method">📷 INSTAGRAM:</div>
-                            <a href="https://www.instagram.com/bynafizz?igsh=eGh1M2o0bmg1Y3Jw" target="_blank" class="contact-link">
-                                @bynafizz → instagram.com/bynafizz
-                            </a>
-                        </div>
+                            <div class="contact-item" data-contact="instagram">
+                                <div class="contact-icon">📷</div>
+                                <div class="contact-details">
+                                    <div class="contact-method">INSTAGRAM</div>
+                                    <a href="https://www.instagram.com/bynafizz?igsh=eGh1M2o0bmg1Y3Jw" target="_blank" 
+                                       class="contact-link" rel="noopener noreferrer" aria-label="Follow on Instagram">
+                                        @bynafizz
+                                    </a>
+                                </div>
+                            </div>
 
-                        <div class="contact-item">
-                            <div class="contact-method">📞 PHONE:</div>
-                            <div class="contact-value">908648571</div>
-                        </div>
+                            <div class="contact-item" data-contact="phone">
+                                <div class="contact-icon">📞</div>
+                                <div class="contact-details">
+                                    <div class="contact-method">PHONE</div>
+                                    <a href="tel:+998908648571" class="contact-link" aria-label="Call phone number">
+                                        +998 90 864 85 71
+                                    </a>
+                                </div>
+                            </div>
 
-                        <div class="contact-item">
-                            <div class="contact-method">🎓 EDUCATION:</div>
-                            <div class="contact-value">Najot Ta'lim</div>
+                            <div class="contact-item" data-contact="location">
+                                <div class="contact-icon">🎓</div>
+                                <div class="contact-details">
+                                    <div class="contact-method">EDUCATION</div>
+                                    <div class="contact-value">Najot Ta'lim</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="section">
                         <h2>## AVAILABILITY</h2>
-                        <div class="status-grid">
-                            <div class="status-item">
-                                <span class="status-label">STATUS:</span>
-                                <span class="status-value online">● ONLINE</span>
+                        <div class="status-dashboard">
+                            <div class="status-card">
+                                <div class="status-indicator online" aria-label="Currently online"></div>
+                                <div class="status-info">
+                                    <div class="status-label">STATUS</div>
+                                    <div class="status-value">ONLINE</div>
+                                </div>
                             </div>
-                            <div class="status-item">
-                                <span class="status-label">RESPONSE_TIME:</span>
-                                <span class="status-value">~24 hours</span>
+                            
+                            <div class="status-card">
+                                <div class="status-icon">⏱️</div>
+                                <div class="status-info">
+                                    <div class="status-label">RESPONSE TIME</div>
+                                    <div class="status-value">~24 hours</div>
+                                </div>
                             </div>
-                            <div class="status-item">
-                                <span class="status-label">PREFERRED:</span>
-                                <span class="status-value">Telegram</span>
+                            
+                            <div class="status-card">
+                                <div class="status-icon">💬</div>
+                                <div class="status-info">
+                                    <div class="status-label">PREFERRED</div>
+                                    <div class="status-value">Telegram</div>
+                                </div>
+                            </div>
+                            
+                            <div class="status-card">
+                                <div class="status-icon">🌍</div>
+                                <div class="status-info">
+                                    <div class="status-label">TIMEZONE</div>
+                                    <div class="status-value">UTC+5</div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="section">
                         <h2>## COLLABORATION</h2>
-                        <div class="collab-info">
-                            <div class="collab-item">
-                                ✅ Open to learning opportunities
+                        <div class="collab-cards">
+                            <div class="collab-card" data-category="learning">
+                                <div class="collab-icon">🎓</div>
+                                <div class="collab-content">
+                                    <h3>Learning Opportunities</h3>
+                                    <p>Always eager to learn new technologies and methodologies</p>
+                                </div>
                             </div>
-                            <div class="collab-item">
-                                ✅ Interested in web development projects
+                            
+                            <div class="collab-card" data-category="development">
+                                <div class="collab-icon">💻</div>
+                                <div class="collab-content">
+                                    <h3>Web Development</h3>
+                                    <p>Frontend & backend projects, modern frameworks</p>
+                                </div>
                             </div>
-                            <div class="collab-item">
-                                ✅ Available for mentorship discussions
+                            
+                            <div class="collab-card" data-category="mentorship">
+                                <div class="collab-icon">🤝</div>
+                                <div class="collab-content">
+                                    <h3>Mentorship</h3>
+                                    <p>Available for guidance and knowledge sharing</p>
+                                </div>
                             </div>
-                            <div class="collab-item">
-                                ✅ Book and library project collaborations
+                            
+                            <div class="collab-card" data-category="projects">
+                                <div class="collab-icon">📚</div>
+                                <div class="collab-content">
+                                    <h3>Special Projects</h3>
+                                    <p>Book publishing, library initiatives, educational content</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -103,9 +215,29 @@
                         <div class="command-line">
                             <span class="prompt">~ Ready to Connect ~</span>
                         </div>
-                        <div class="connect-message">
-                            Assalomu alaykum! Men Nafiz. Dasturlash, kitoblar va texnologiya haqida 
-                            suhbatlashishni yaxshi ko'raman. Bog'lanishdan tortinmang!
+                        <div class="connect-widget">
+                            <div class="connect-message">
+                                <p>Assalomu alaykum! Men Nafiz. Dasturlash, kitoblar va texnologiya haqida 
+                                suhbatlashishni yaxshi ko'raman. Bog'lanishdan tortinmang!</p>
+                            </div>
+                            
+                            <div class="quick-actions">
+                                <a href="https://t.me/bynafizz" class="quick-btn telegram" 
+                                   target="_blank" rel="noopener noreferrer" aria-label="Quick message on Telegram">
+                                    <span class="btn-icon">📱</span>
+                                    <span class="btn-text">Quick Message</span>
+                                </a>
+                                
+                                <button class="quick-btn email" onclick="scrollToForm()" aria-label="Send email via form">
+                                    <span class="btn-icon">✉️</span>
+                                    <span class="btn-text">Send Email</span>
+                                </button>
+                                
+                                <a href="tel:+998908648571" class="quick-btn phone" aria-label="Call now">
+                                    <span class="btn-icon">📞</span>
+                                    <span class="btn-text">Call Now</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
